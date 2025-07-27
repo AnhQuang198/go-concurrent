@@ -61,14 +61,17 @@ func main() {
 
 	color.Green("The shop is open for the day!")
 
+	lstBarbers := []string{"Faker", "Guma", "Owner", "Keria", "Doran"}
+
 	// add barbers
-	shop.addBarber("Frank")
-	shop.addBarber("Chovy")
-	shop.addBarber("Faker")
-	shop.addBarber("Guma")
-	shop.addBarber("Ruler")
-	shop.addBarber("Keria")
-	shop.addBarber("Doran")
+	for _, barber := range lstBarbers {
+		shop.addBarber(barber)
+	}
+	//shop.addBarber("Faker")
+	//shop.addBarber("Guma")
+	//shop.addBarber("Owner")
+	//shop.addBarber("Keria")
+	//shop.addBarber("Doran")
 
 	ctx, cancel := context.WithTimeout(context.Background(), timeOpen)
 	defer cancel()
